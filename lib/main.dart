@@ -130,9 +130,11 @@ class SearchSection extends StatelessWidget {
                 onPressed: () {},
                 child: Icon(
                   Icons.search,
+                  size: 26,
                 ),
                 style: ElevatedButton.styleFrom(
                   shape: CircleBorder(),
+                  padding: EdgeInsets.all(10),
                   primary: d_green,
                 ),
               ),
@@ -140,9 +142,50 @@ class SearchSection extends StatelessWidget {
           ],
         ),
         SizedBox(height: 20),
-        Container(
-          height: 50,
-          color: Colors.green,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              margin: EdgeInsets.all(10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Choisir la date',
+                    style: GoogleFonts.nunito(
+                      color: Colors.grey,
+                      fontSize: 15,
+                    ),
+                  ),
+                  Text('20 Nov - 11 Avr',
+                      style: GoogleFonts.nunito(
+                        color: Colors.black,
+                        fontSize: 17,
+                      )),
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(
+                    'Nombre de chambre',
+                    style: GoogleFonts.nunito(
+                      color: Colors.grey,
+                      fontSize: 15,
+                    ),
+                  ),
+                  Text('1 Chambre - 2 Enfants',
+                      style: GoogleFonts.nunito(
+                        color: Colors.black,
+                        fontSize: 17,
+                      ))
+                ],
+              ),
+            )
+          ],
         ),
       ]),
     );
