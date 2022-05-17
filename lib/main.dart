@@ -81,8 +81,49 @@ class SearchSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
-      color: Colors.blue,
+      color: Colors.grey[200],
+      padding: EdgeInsets.fromLTRB(10, 25, 10, 10),
+      child: Column(children: [
+        Row(
+          children: [
+            Expanded(
+                child: Container(
+              padding: EdgeInsets.only(left: 5),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(30),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey,
+                    blurRadius: 4,
+                    offset: Offset(0, 3),
+                  )
+                ],
+              ),
+              child: TextField(
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.all(10),
+                  border: InputBorder.none,
+                  hintText: 'Recherchez un hôtel ...',
+                  // prefixIcon: Icon(
+                  //   Icons.search,
+                  //   color: Colors.grey[600],
+                  // ),
+                ),
+              ),
+            )),
+            Container(
+              height: 50,
+              width: 50,
+              color: Colors.red,
+            )
+          ],
+        ),
+        Container(
+          height: 50,
+          color: Colors.green,
+        ),
+      ]),
     );
   }
 }
@@ -91,8 +132,8 @@ class HotelSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 1500,
-      color: Colors.red,
+      height: 2000,
+      color: Colors.white,
     );
   }
 }
