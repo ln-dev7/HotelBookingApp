@@ -47,7 +47,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
         onPressed: null,
       ),
-      title: Text('Explore',
+      title: Text('Explorer',
           style: GoogleFonts.nunito(
               color: Colors.black, fontSize: 22, fontWeight: FontWeight.w800)),
       actions: [
@@ -94,7 +94,7 @@ class SearchSection extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey,
+                    color: Colors.grey.shade300,
                     blurRadius: 4,
                     offset: Offset(0, 3),
                   )
@@ -120,7 +120,7 @@ class SearchSection extends StatelessWidget {
                 borderRadius: BorderRadius.circular(25),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey,
+                    color: Colors.grey.shade300,
                     blurRadius: 4,
                     offset: Offset(0, 4),
                   ),
@@ -141,7 +141,7 @@ class SearchSection extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(height: 20),
+        SizedBox(height: 10),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -165,6 +165,7 @@ class SearchSection extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(width: 10),
             Container(
               margin: EdgeInsets.all(10),
               child: Column(
@@ -193,11 +194,117 @@ class SearchSection extends StatelessWidget {
 }
 
 class HotelSection extends StatelessWidget {
+  final List hotelList = [
+    {
+      'title': 'LN Hotel',
+      'place': 'Yaounde, Cameroun',
+      'distance': 7,
+      'review': 789,
+      'picture': 'images/img1.jpg',
+      'price': '\$1200',
+    },
+    {
+      'title': 'LN Residence',
+      'place': 'Douala, Cameroun',
+      'distance': 12,
+      'review': 340,
+      'picture': 'images/img2.jpg',
+      'price': '\$950',
+    },
+    {
+      'title': 'Hotel Hilton',
+      'place': 'Yaounde, Cameroun',
+      'distance': 2,
+      'review': 187,
+      'picture': 'images/img3.jpg',
+      'price': '\$150',
+    },
+    {
+      'title': 'Mont Febe',
+      'place': 'Yaounde, Cameroun',
+      'distance': 5,
+      'review': 98,
+      'picture': 'images/img4.jpg',
+      'price': '\$390',
+    },
+    {
+      'title': 'Hotel Hilton',
+      'place': 'Yaounde, Cameroun',
+      'distance': 15,
+      'review': 120,
+      'picture': 'images/img5.jpg',
+      'price': '\$340',
+    },
+    {
+      'title': 'Hotel de ville',
+      'place': 'Garoua, Cameroun',
+      'distance': 0,
+      'review': 67,
+      'picture': 'images/img6.jpg',
+      'price': '\$200',
+    },
+    {
+      'title': 'Hotel la falaise',
+      'place': 'Douala, Cameroun',
+      'distance': 10,
+      'review': 678,
+      'picture': 'images/img7.jpg',
+      'price': '\$500',
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 2000,
+      padding: EdgeInsets.all(10),
       color: Colors.white,
+      child: Column(
+        children: [
+          Container(
+            height: 50,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '430 hotels trouvés',
+                  style: GoogleFonts.nunito(
+                    color: Colors.black,
+                    fontSize: 15,
+                  ),
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'Trier par',
+                      style: GoogleFonts.nunito(
+                        color: Colors.black,
+                        fontSize: 15,
+                      ),
+                    ),
+                    IconButton(
+                      icon: Icon(
+                        Icons.filter_list_outlined,
+                        color: d_green,
+                        size: 25,
+                      ),
+                      onPressed: null,
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+          Column(
+              children: hotelList.map((hotel) {
+            return Container(
+              child: Image.asset(
+                hotel['picture'],
+                fit: BoxFit.cover,
+              ),
+            );
+          }).toList())
+        ],
+      ),
     );
   }
 }
