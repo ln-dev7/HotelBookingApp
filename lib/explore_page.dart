@@ -57,7 +57,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         },
       ),
       title: Text('Explorer',
-          style: GoogleFonts.poppins(
+          style: GoogleFonts.ubuntu(
               color: Colors.black, fontSize: 22, fontWeight: FontWeight.w800)),
       actions: [
         IconButton(
@@ -169,7 +169,7 @@ class SearchSection extends StatelessWidget {
                   Text('20 Nov - 11 Avr',
                       style: GoogleFonts.poppins(
                         color: Colors.black,
-                        fontSize: 17,
+                        fontSize: 14,
                       )),
                 ],
               ),
@@ -190,7 +190,7 @@ class SearchSection extends StatelessWidget {
                   Text('1 Chambre - 2 Enfants',
                       style: GoogleFonts.poppins(
                         color: Colors.black,
-                        fontSize: 17,
+                        fontSize: 14,
                       ))
                 ],
               ),
@@ -399,7 +399,7 @@ class HotelCard extends StatelessWidget {
                   style: GoogleFonts.poppins(
                     color: Colors.grey[500],
                     fontWeight: FontWeight.w400,
-                    fontSize: 14,
+                    fontSize: 12,
                   ),
                 ),
                 Row(
@@ -415,7 +415,7 @@ class HotelCard extends StatelessWidget {
                       style: GoogleFonts.poppins(
                         color: Colors.grey[500],
                         fontWeight: FontWeight.w400,
-                        fontSize: 14,
+                        fontSize: 12,
                       ),
                     ),
                   ],
@@ -425,7 +425,7 @@ class HotelCard extends StatelessWidget {
                   style: GoogleFonts.poppins(
                     color: Colors.grey.shade800,
                     fontWeight: FontWeight.w400,
-                    fontSize: 14,
+                    fontSize: 12,
                   ),
                 )
               ],

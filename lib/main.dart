@@ -85,7 +85,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: null,
       ),
       title: Text('Acceuil',
-          style: GoogleFonts.nunito(
+          style: GoogleFonts.ubuntu(
               color: Colors.black, fontSize: 22, fontWeight: FontWeight.w800)),
       actions: [
         IconButton(
