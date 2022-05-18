@@ -46,15 +46,15 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
           size: 20,
         ),
         onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return HomePage();
-                },
-              ),
-            );
-          },
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return HomePage();
+              },
+            ),
+          );
+        },
       ),
       title: Text('Explorer',
           style: GoogleFonts.poppins(
@@ -303,10 +303,12 @@ class HotelSection extends StatelessWidget {
               ],
             ),
           ),
-          Column(
-              children: hotelList.map((hotel) {
-            return HotelCard(hotel);
-          }).toList())
+          SingleChildScrollView(
+              child: Column(
+            children: hotelList.map((hotel) {
+              return HotelCard(hotel);
+            }).toList(),
+          ))
         ],
       ),
     );
@@ -336,7 +338,7 @@ class HotelCard extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 140,
+            height: 130,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(18),
